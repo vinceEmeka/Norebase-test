@@ -5,18 +5,23 @@
 .table {
   border-radius: 2rem;
 }
+
 .new {
   display: flex;
   justify-content: space-between;
 }
 
 .previousBtn {
-  visibility: hidden; /* This keeps the button space but makes it invisible */
+  visibility: hidden;
+  /* This keeps the button space but makes it invisible */
 }
 
 .previousBtn.visible {
-  visibility: visible; /* Show the button when needed */
+  visibility: visible;
+  /* Show the button when needed */
 }
+
+/* RESPONSIVENESS */
 @media (max-width: 768px) {
   .background {
     height: 100%;
@@ -24,38 +29,36 @@
   }
 
   .table {
-    width: 100%; /* Ensure the table uses full width */
+    width: 100%;
   }
 
   .table thead {
-    display: none; /* Hide the table headers */
+    display: none;
   }
 
   .table tbody tr {
     width: 100%;
     flex-wrap: wrap;
-    margin-bottom: 15px; /* Space between rows */
-
-    border-radius: 5px; /* Rounded corners */
-    display: grid; /* Enable grid layout */
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    margin-bottom: 15px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .table tbody tr td {
-    display: flex; /* Use flex for cells */
+    display: flex;
     flex-direction: column;
-    /* Space between label and data */
-    width: 100%; /* Full width for each cell */
-    padding: 5px 0; /* Padding for cells */
+    width: 100%;
+    padding: 5px;
   }
 
   .table tbody tr td::before {
-    content: attr(data-label); /* Use the data-label attribute */
-    font-weight: bold; /* Bold font for labels */
-    margin-right: 10px; /* Space between label and value */
+    content: attr(data-label);
+    font-weight: bold;
+    margin-right: 10px;
   }
 
   .table tbody tr td[data-label] {
-    flex: 1; /* Allow cells to flex and occupy available space */
+    flex: 1;
   }
 }
